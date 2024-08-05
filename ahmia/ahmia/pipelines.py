@@ -18,10 +18,7 @@ class CustomElasticSearchPipeline:
 
     def __init__(self):
         self.es = Elasticsearch(
-            [settings.get('ELASTICSEARCH_SERVER')],
-            http_auth=(settings.get('ELASTICSEARCH_USERNAME'),
-            settings.get('ELASTICSEARCH_PASSWORD')),
-            ca_certs=settings.get('ELASTICSEARCH_CA_CERTS', None)
+            [settings.get('ELASTICSEARCH_SERVER')]
         )
         self.index_name = settings.get('ELASTICSEARCH_INDEX')
 
